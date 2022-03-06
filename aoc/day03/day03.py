@@ -62,8 +62,6 @@ def extract_most_common_bits(bits_matrix: list, least_common_bits_mode: bool = F
                 indices_zero.append(n2)
             elif bits_matrix[n2, n1] == '1':
                 indices_one.append(n2)
-            else:
-                raise ValueError("Value found which is neither 0 nor 1")
 
         if not least_common_bits_mode:
             if len(indices_zero) > len(indices_one):

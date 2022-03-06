@@ -40,9 +40,6 @@ def draw_number(drawn_number: str, boards: list, last_winning_board_mode: bool =
     board_idxs_to_ignore = []
 
     for board_idx, board in enumerate(boards):
-        if board_idx in board_idxs_to_ignore:
-            continue
-
         for row_idx, row in enumerate(board):
             if board_idx in board_idxs_to_ignore:
                 continue
@@ -100,8 +97,6 @@ def calc_score_of_winning_board(draw_numbers: list, boards: list, last_winning_b
         score, boards_left = draw_number(n, boards_left, last_winning_board_mode)
         if score > 0:
             return score
-
-    return 0
 
 
 if __name__ == '__main__':
