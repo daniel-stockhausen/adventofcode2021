@@ -15,11 +15,11 @@ class TestDay04(unittest.TestCase):
 
     def test_04b_example(self):
         draw_numbers, boards = get_example_data()
-        self.assertEqual(1924, calc_score_of_winning_board(draw_numbers, boards, True))
+        self.assertEqual(1924, calc_score_of_winning_board(draw_numbers, boards, last_winning_board_mode=True))
 
     def test_04b(self):
         draw_numbers, boards = get_input_data()
-        self.assertEqual(10030, calc_score_of_winning_board(draw_numbers, boards, True))
+        self.assertEqual(10030, calc_score_of_winning_board(draw_numbers, boards, last_winning_board_mode=True))
 
     def test_04_main(self):
         self.assertEqual(0, os.system("python -m aoc.day04.day04"))

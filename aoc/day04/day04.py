@@ -7,7 +7,7 @@ def data_from_file(filename: str) -> tuple[list, list]:
     boards = []
 
     with open(filename) as f:
-        drawn_numbers_line = f.readline()[:-1]  # without \n at the end
+        drawn_numbers_line = f.readline().strip()
         drawn_numbers = drawn_numbers_line.split(',')
 
         board = []
@@ -110,6 +110,6 @@ if __name__ == '__main__':
     part1 = calc_score_of_winning_board(draw_numbers, boards)
     print(f"Part 1: {part1}")
     draw_numbers, boards = get_input_data()
-    part2 = calc_score_of_winning_board(draw_numbers, boards, True)
+    part2 = calc_score_of_winning_board(draw_numbers, boards, last_winning_board_mode=True)
     print(f"Part 2: {part2}")
     print()

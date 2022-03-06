@@ -9,8 +9,7 @@ def data_from_file(filename: str) -> list:
     bits_matrix = []
     with open(filename) as f:
         for line in f:
-            if line[-1] == '\n':
-                line = line[:-1]
+            line = line.strip()
             list_of_bits = list(line)
             bits_matrix.append(list_of_bits)
 
@@ -82,11 +81,11 @@ def extract_most_common_bits(bits_matrix: list, least_common_bits_mode: bool = F
 
 
 def calc_oxygen_generator_rating(bits_matrix: list) -> int:
-    return extract_most_common_bits(bits_matrix, False)
+    return extract_most_common_bits(bits_matrix, least_common_bits_mode=False)
 
 
 def calc_co2_scrubber_rating(bits_matrix: list) -> int:
-    return extract_most_common_bits(bits_matrix, True)
+    return extract_most_common_bits(bits_matrix, least_common_bits_mode=True)
 
 
 def calc_life_support_rating(bits_matrix: list) -> int:
