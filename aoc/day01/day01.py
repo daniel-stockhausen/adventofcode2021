@@ -1,5 +1,6 @@
-filepath_data = 'input/day01.txt'
-filepath_example = 'input/day01-example.txt'
+day = 'day01'
+filepath_data = f'input/{day}.txt'
+filepath_example = f'input/{day}-example.txt'
 
 
 def data_from_file(filename: str) -> list:
@@ -43,8 +44,9 @@ def count_increasing_generic(pairs_to_compare: list) -> int:
 
 
 if __name__ == '__main__':
+    print(day)
     part1 = count_increasing_pairs(get_input_data())
     print(f"Part 1: {part1}")
-
     part2 = count_increasing_triples(get_input_data())
     print(f"Part 2: {part2}")
+    print()

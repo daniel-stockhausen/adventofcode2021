@@ -1,5 +1,6 @@
-filepath_data = 'input/day02.txt'
-filepath_example = 'input/day02-example.txt'
+day = 'day02'
+filepath_data = f'input/{day}.txt'
+filepath_example = f'input/{day}-example.txt'
 
 
 def data_from_file(filename: str) -> list:
@@ -54,8 +55,9 @@ def calculate_destination_part2(cmds: list) -> int:
 
 
 if __name__ == '__main__':
+    print(day)
     part1 = calculate_destination(get_input_data())
     print(f"Part 1: {part1}")
-
     part2 = calculate_destination_part2(get_input_data())
     print(f"Part 2: {part2}")
+    print()

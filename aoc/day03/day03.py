@@ -1,7 +1,8 @@
 import numpy as np
 
-filepath_data = 'input/day03.txt'
-filepath_example = 'input/day03-example.txt'
+day = 'day03'
+filepath_data = f'input/{day}.txt'
+filepath_example = f'input/{day}-example.txt'
 
 
 def data_from_file(filename: str) -> list:
@@ -93,8 +94,9 @@ def calc_life_support_rating(bits_matrix: list) -> int:
 
 
 if __name__ == '__main__':
+    print(day)
     part1 = calc_power_consumption(get_input_data())
     print(f"Part 1: {part1}")
-
     part2 = calc_life_support_rating(get_input_data())
     print(f"Part 2: {part2}")
+    print()
