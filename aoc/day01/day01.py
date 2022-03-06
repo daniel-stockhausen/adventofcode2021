@@ -1,5 +1,5 @@
-file_input = 'input/day01.txt'
-file_example = 'input/day01-example.txt'
+filepath_data = 'input/day01.txt'
+filepath_example = 'input/day01-example.txt'
 
 
 def data_from_file(filename: str) -> list:
@@ -11,11 +11,11 @@ def data_from_file(filename: str) -> list:
 
 
 def get_input_data() -> list:
-    return data_from_file(file_input)
+    return data_from_file(filepath_data)
 
 
 def get_example_data() -> list:
-    return data_from_file(file_example)
+    return data_from_file(filepath_example)
 
 
 def count_increasing_pairs(numbers: list) -> int:
