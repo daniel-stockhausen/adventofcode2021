@@ -3,8 +3,8 @@ filepath_data = f'input/{day}.txt'
 filepath_example = f'input/{day}-example.txt'
 
 
-def data_from_file(filename: str) -> list:
-    cmds = []
+def data_from_file(filename: str) -> list[tuple[str, int]]:
+    cmds: list[tuple[str, int]] = []
     with open(filename) as f:
         for line in f:
             cmd_pair = line.split()
@@ -12,15 +12,15 @@ def data_from_file(filename: str) -> list:
     return cmds
 
 
-def get_input_data() -> list:
+def get_input_data() -> list[tuple[str, int]]:
     return data_from_file(filepath_data)
 
 
-def get_example_data() -> list:
+def get_example_data() -> list[tuple[str, int]]:
     return data_from_file(filepath_example)
 
 
-def calculate_destination(cmds: list) -> int:
+def calculate_destination(cmds: list[tuple[str, int]]) -> int:
     pos = 0
     depth = 0
 
@@ -32,11 +32,13 @@ def calculate_destination(cmds: list) -> int:
                 depth -= operand
             case 'down':
                 depth += operand
+            case _:
+                pass
 
     return pos * depth
 
 
-def calculate_destination_part2(cmds: list) -> int:
+def calculate_destination_part2(cmds: list[tuple[str, int]]) -> int:
     pos = 0
     depth = 0
     aim = 0
@@ -50,6 +52,8 @@ def calculate_destination_part2(cmds: list) -> int:
                 aim -= operand
             case 'down':
                 aim += operand
+            case _:
+                pass
 
     return pos * depth
 

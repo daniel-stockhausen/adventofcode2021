@@ -6,21 +6,21 @@ filepath_data = f'input/{day}.txt'
 filepath_example = f'input/{day}-example.txt'
 
 
-def data_from_file(filename: str) -> dict:
+def data_from_file(filename: str) -> list[str]:
     with open(filename) as f:
         lines = [line.strip() for line in f]
     return lines
 
 
-def get_input_data() -> list:
+def get_input_data() -> list[str]:
     return data_from_file(filepath_data)
 
 
-def get_example_data() -> list:
+def get_example_data() -> list[str]:
     return data_from_file(filepath_example)
 
 
-def calc_diagram(vents: list, use_diagonals: bool = False) -> dict:
+def calc_diagram(vents: list[str], use_diagonals: bool = False) -> dict[tuple[int, int], int]:
     matrix = dok_array((100, 100), dtype=np.int8)
 
     for vent in vents:
@@ -50,7 +50,7 @@ def calc_diagram(vents: list, use_diagonals: bool = False) -> dict:
     return dict(matrix)
 
 
-def count_overlapping_coords(vents: list, use_diagonals: bool = False) -> int:
+def count_overlapping_coords(vents: list[str], use_diagonals: bool = False) -> int:
     matrix_dict = calc_diagram(vents, use_diagonals)
     return sum(1 for n in matrix_dict.values() if n >= 2)
 

@@ -3,14 +3,14 @@ filepath_data = f'input/{day}.txt'
 filepath_example = f'input/{day}-example.txt'
 
 
-def data_from_file(filename: str) -> tuple[list, list]:
-    boards = []
+def data_from_file(filename: str) -> tuple[list[str], list[list[list[str]]]]:
+    boards: list[list[list[str]]] = []
 
     with open(filename) as f:
         drawn_numbers_line = f.readline().strip()
-        drawn_numbers = drawn_numbers_line.split(',')
+        drawn_numbers: list[str] = drawn_numbers_line.split(',')
 
-        board = []
+        board: list[list[str]] = []
         board_row_index = 0
         for line in f:
             board_row_index += 1
@@ -28,16 +28,17 @@ def data_from_file(filename: str) -> tuple[list, list]:
     return drawn_numbers, boards
 
 
-def get_input_data() -> tuple[list, list]:
+def get_input_data() -> tuple[list[str], list[list[list[str]]]]:
     return data_from_file(filepath_data)
 
 
-def get_example_data() -> tuple[list, list]:
+def get_example_data() -> tuple[list[str], list[list[list[str]]]]:
     return data_from_file(filepath_example)
 
 
-def draw_number(drawn_number: str, boards: list, last_winning_board_mode: bool = False) -> tuple[int, list]:
-    board_idxs_to_ignore = []
+def draw_number(drawn_number: str, boards: list[list[list[str]]], last_winning_board_mode: bool = False) \
+        -> tuple[int, list[list[list[str]]]]:
+    board_idxs_to_ignore: list[int] = []
 
     for board_idx, board in enumerate(boards):
         for row_idx, row in enumerate(board):
@@ -65,7 +66,7 @@ def draw_number(drawn_number: str, boards: list, last_winning_board_mode: bool =
     return 0, boards
 
 
-def has_board_won(board: list, column_idx: int, row_idx: int) -> bool:
+def has_board_won(board: list[list[str]], column_idx: int, row_idx: int) -> bool:
     won_horizontal = True
     for n in range(0, 5):
         if board[row_idx][n] != 'x':
@@ -81,7 +82,7 @@ def has_board_won(board: list, column_idx: int, row_idx: int) -> bool:
     return won_horizontal or won_vertical
 
 
-def calc_score_of_board(board: list, last_drawn: int) -> int:
+def calc_score_of_board(board: list[list[str]], last_drawn: int) -> int:
     sum = 0
     for row in board:
         for n in row:
@@ -91,20 +92,23 @@ def calc_score_of_board(board: list, last_drawn: int) -> int:
     return sum * last_drawn
 
 
-def calc_score_of_winning_board(draw_numbers: list, boards: list, last_winning_board_mode: bool = False) -> int:
+def calc_score_of_winning_board(drawn_numbers: list[str], boards: list[list[list[str]]],
+                                last_winning_board_mode: bool = False) -> int:
     boards_left = boards
-    for n in draw_numbers:
+    for n in drawn_numbers:
         score, boards_left = draw_number(n, boards_left, last_winning_board_mode)
         if score > 0:
             return score
 
+    return 0
+
 
 if __name__ == '__main__':
     print(day)
-    draw_numbers, boards = get_input_data()
-    part1 = calc_score_of_winning_board(draw_numbers, boards)
+    drawn_numbers, boards = get_input_data()
+    part1 = calc_score_of_winning_board(drawn_numbers, boards)
     print(f"Part 1: {part1}")
-    draw_numbers, boards = get_input_data()
-    part2 = calc_score_of_winning_board(draw_numbers, boards, last_winning_board_mode=True)
+    drawn_numbers, boards = get_input_data()
+    part2 = calc_score_of_winning_board(drawn_numbers, boards, last_winning_board_mode=True)
     print(f"Part 2: {part2}")
     print()
