@@ -1,6 +1,6 @@
-day = 'day02'
-filepath_data = f'input/{day}.txt'
-filepath_example = f'input/{day}-example.txt'
+day = "day02"
+filepath_data = f"input/{day}.txt"
+filepath_example = f"input/{day}-example.txt"
 
 
 def data_from_file(filename: str) -> list[tuple[str, int]]:
@@ -26,11 +26,11 @@ def calculate_destination(cmds: list[tuple[str, int]]) -> int:
 
     for operation, operand in cmds:
         match operation:
-            case 'forward':
+            case "forward":
                 pos += operand
-            case 'up':
+            case "up":
                 depth -= operand
-            case 'down':
+            case "down":
                 depth += operand
             case _:
                 pass
@@ -45,12 +45,12 @@ def calculate_destination_part2(cmds: list[tuple[str, int]]) -> int:
 
     for operation, operand in cmds:
         match operation:
-            case 'forward':
+            case "forward":
                 pos += operand
                 depth += aim * operand
-            case 'up':
+            case "up":
                 aim -= operand
-            case 'down':
+            case "down":
                 aim += operand
             case _:
                 pass
@@ -58,7 +58,7 @@ def calculate_destination_part2(cmds: list[tuple[str, int]]) -> int:
     return pos * depth
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(day)
     part1 = calculate_destination(get_input_data())
     print(f"Part 1: {part1}")

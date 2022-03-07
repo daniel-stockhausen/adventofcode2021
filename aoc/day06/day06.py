@@ -1,12 +1,12 @@
-day = 'day06'
-filepath_data = f'input/{day}.txt'
-filepath_example = f'input/{day}-example.txt'
+day = "day06"
+filepath_data = f"input/{day}.txt"
+filepath_example = f"input/{day}-example.txt"
 
 
 def data_from_file(filename: str) -> list[int]:
     with open(filename) as f:
         lanternfish_line = f.readline().strip()
-        lanternfish: list[int] = [int(x) for x in lanternfish_line.split(',')]
+        lanternfish: list[int] = [int(x) for x in lanternfish_line.split(",")]
     return lanternfish
 
 
@@ -63,7 +63,7 @@ def elapse_days(lanternfish: list[int], days: int, efficiently: bool = False) ->
         return sum(x for x in lanternfish_dict.values())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(day)
     part1 = elapse_days(get_input_data(), 80)
     print(f"Part 1: {part1}")

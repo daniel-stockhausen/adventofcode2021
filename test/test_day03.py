@@ -1,8 +1,14 @@
 import os
 import unittest
 
-from aoc.day03.day03 import get_input_data, get_example_data, calc_power_consumption, \
-    calc_co2_scrubber_rating, calc_life_support_rating, calc_oxygen_generator_rating
+from aoc.day03.day03 import (
+    get_input_data,
+    get_example_data,
+    calc_power_consumption,
+    calc_co2_scrubber_rating,
+    calc_life_support_rating,
+    calc_oxygen_generator_rating,
+)
 
 
 class TestDay03(unittest.TestCase):

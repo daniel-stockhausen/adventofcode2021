@@ -1,9 +1,9 @@
 import numpy as np
 from scipy.sparse import dok_array
 
-day = 'day05'
-filepath_data = f'input/{day}.txt'
-filepath_example = f'input/{day}-example.txt'
+day = "day05"
+filepath_data = f"input/{day}.txt"
+filepath_example = f"input/{day}-example.txt"
 
 
 def data_from_file(filename: str) -> list[str]:
@@ -24,9 +24,9 @@ def calc_diagram(vents: list[str], use_diagonals: bool = False) -> dict[tuple[in
     matrix = dok_array((100, 100), dtype=np.int8)
 
     for vent in vents:
-        coords_start, coords_end = vent.split(' -> ')
-        x1, y1 = [int(n) for n in coords_start.split(',')]
-        x2, y2 = [int(n) for n in coords_end.split(',')]
+        coords_start, coords_end = vent.split(" -> ")
+        x1, y1 = [int(n) for n in coords_start.split(",")]
+        x2, y2 = [int(n) for n in coords_end.split(",")]
 
         if max(x1, x2) >= matrix.shape[0]:
             matrix.resize(round(max(x1, x2) + 50, -2), matrix.shape[1])
@@ -55,7 +55,7 @@ def count_overlapping_coords(vents: list[str], use_diagonals: bool = False) -> i
     return sum(1 for n in matrix_dict.values() if n >= 2)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(day)
     part1 = count_overlapping_coords(get_input_data())
     print(f"Part 1: {part1}")

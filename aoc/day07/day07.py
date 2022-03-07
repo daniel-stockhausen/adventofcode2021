@@ -1,14 +1,14 @@
 import numpy as np
 
-day = 'day07'
-filepath_data = f'input/{day}.txt'
-filepath_example = f'input/{day}-example.txt'
+day = "day07"
+filepath_data = f"input/{day}.txt"
+filepath_example = f"input/{day}-example.txt"
 
 
 def data_from_file(filename: str) -> list[int]:
     with open(filename) as f:
         crabs_line = f.readline().strip()
-        crabs: list[int] = [int(x) for x in crabs_line.split(',')]
+        crabs: list[int] = [int(x) for x in crabs_line.split(",")]
     return crabs
 
 
@@ -50,7 +50,7 @@ def calc_fuel_for_cheapest_target(crabs: list[int], increasing_cost: bool = Fals
         return lowest
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(day)
     part1 = calc_fuel_for_cheapest_target(get_input_data())
     print(f"Part 1: {part1}")

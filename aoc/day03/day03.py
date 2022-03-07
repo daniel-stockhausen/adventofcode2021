@@ -1,9 +1,9 @@
 import numpy as np
 import numpy.typing as npt
 
-day = 'day03'
-filepath_data = f'input/{day}.txt'
-filepath_example = f'input/{day}-example.txt'
+day = "day03"
+filepath_data = f"input/{day}.txt"
+filepath_example = f"input/{day}-example.txt"
 
 
 def data_from_file(filename: str) -> list[list[str]]:
@@ -26,21 +26,21 @@ def get_example_data() -> list[list[str]]:
 
 
 def calc_power_consumption(bits_matrix: list[list[str]]) -> int:
-    gamma_rate, gamma_rate_int = '', 0
-    epsilon_rate, epsilon_rate_int = '', 0
+    gamma_rate, gamma_rate_int = "", 0
+    epsilon_rate, epsilon_rate_int = "", 0
 
     bits_matrix_transposed = np.array(bits_matrix).T.tolist()
 
     for column in bits_matrix_transposed:
-        count_zero = column.count('0')
-        count_one = column.count('1')
+        count_zero = column.count("0")
+        count_one = column.count("1")
 
         if count_zero > count_one:
-            gamma_rate += str('0')
-            epsilon_rate += str('1')
+            gamma_rate += str("0")
+            epsilon_rate += str("1")
         else:
-            gamma_rate += str('1')
-            epsilon_rate += str('0')
+            gamma_rate += str("1")
+            epsilon_rate += str("0")
 
         gamma_rate_int = int(gamma_rate, 2)
         epsilon_rate_int = int(epsilon_rate, 2)
@@ -59,9 +59,9 @@ def extract_most_common_bits(bits_matrix: list[list[str]], least_common_bits_mod
         if row_count == 1:
             break
         for n2 in range(0, row_count):
-            if bits_matrix_nd[n2, n1] == '0':
+            if bits_matrix_nd[n2, n1] == "0":
                 indices_zero.append(n2)
-            elif bits_matrix_nd[n2, n1] == '1':
+            elif bits_matrix_nd[n2, n1] == "1":
                 indices_one.append(n2)
 
         if not least_common_bits_mode:
@@ -75,7 +75,7 @@ def extract_most_common_bits(bits_matrix: list[list[str]], least_common_bits_mod
             elif len(indices_zero) > len(indices_one):
                 bits_matrix_nd = np.delete(bits_matrix_nd, indices_zero, axis=0)
 
-    bit_string = ''.join(bits_matrix_nd.tolist()[0])
+    bit_string = "".join(bits_matrix_nd.tolist()[0])
     return int(bit_string, 2)
 
 
@@ -91,7 +91,7 @@ def calc_life_support_rating(bits_matrix: list[list[str]]) -> int:
     return calc_oxygen_generator_rating(bits_matrix) * calc_co2_scrubber_rating(bits_matrix)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(day)
     part1 = calc_power_consumption(get_input_data())
     print(f"Part 1: {part1}")
