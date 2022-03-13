@@ -43,7 +43,7 @@ digit_by_segments: dict[str, int] = {value: key for key, value in segments_by_di
 
 class Digit():
     def __init__(self, pattern: str) -> None:
-        self._pattern = pattern
+        self.pattern = pattern
 
     @property
     def pattern(self) -> str:

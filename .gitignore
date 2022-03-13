@@ -4,3 +4,4 @@ __pycache__
 .pyre
 .pyre_configuration
 .vscode
+*.pyc

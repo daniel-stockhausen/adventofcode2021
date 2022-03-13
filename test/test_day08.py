@@ -45,6 +45,14 @@ class TestDay08(unittest.TestCase):
         with self.assertRaises(ValueError):
             str(Digit("abh"))
 
+    def test_digit_eq(self):
+        d1 = Digit("abc")
+        d2 = Digit("bcaa")
+
+        self.assertEqual(d1, d2)
+        d2.pattern = "ab"
+        self.assertNotEqual(d1, d2)
+
     def test_digit_property_pattern(self):
         d1 = Digit("abc")
         d2 = Digit("de")
