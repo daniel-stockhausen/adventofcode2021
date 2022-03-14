@@ -52,6 +52,7 @@ class TestDay08(unittest.TestCase):
         self.assertEqual(d1, d2)
         d2.pattern = "ab"
         self.assertNotEqual(d1, d2)
+        self.assertNotEqual(d1, "Not a Digit object")
 
     def test_digit_property_pattern(self):
         d1 = Digit("abc")
