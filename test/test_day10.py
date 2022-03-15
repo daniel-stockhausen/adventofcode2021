@@ -19,6 +19,9 @@ class TestDay10(unittest.TestCase):
         self.assertEqual(3, score_line_error("[<(<(<(<{}))><([]([]()"))
         self.assertEqual(25137, score_line_error("<{([([[(<>()){}]>(<<{{"))
 
+        with self.assertRaises(ValueError):
+            score_line_error("([!])")
+
     def test_10a_example(self):
         self.assertEqual(26397, calc_file_error_score(get_example_data()))
 
@@ -34,6 +37,8 @@ class TestDay10(unittest.TestCase):
                          calc_missing_tokens_for_incomplete_line("(((({<>}<{<{<>}{[]{[]{}"))
         self.assertEqual("]]}}]}]}>",
                          calc_missing_tokens_for_incomplete_line("{<[[]]>}<{[{[{[]{()[[[]"))
+        self.assertEqual("])}>",
+                         calc_missing_tokens_for_incomplete_line("<{([{{}}[<[[[<>{}]]]>[]]"))
         self.assertEqual("])}>",
                          calc_missing_tokens_for_incomplete_line("<{([{{}}[<[[[<>{}]]]>[]]"))
 

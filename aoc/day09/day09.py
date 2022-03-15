@@ -12,7 +12,7 @@ _checked_coordinates: list[Coordinate] = []
 
 def data_from_file(filename: str) -> Heightmap:
     with open(filename) as f:
-        return [[int(x) for x in list(line) if x != "\n"] for line in f]
+        return [[int(x) for x in list(line.strip())] for line in f]
 
 
 def get_input_data() -> Heightmap:

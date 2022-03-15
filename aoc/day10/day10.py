@@ -64,11 +64,8 @@ def calc_missing_tokens_for_incomplete_line(line: str) -> str:
             stack.pop()
 
     while len(stack) > 0:
-        token = stack.pop()
-        if token in opening_token_by_closing_token.values():
-            missing_tokens += closing_token_by_opening_token[token]
-        else:
-            stack.pop()
+        opening_token = stack.pop()
+        missing_tokens += closing_token_by_opening_token[opening_token]
 
     return missing_tokens
 
