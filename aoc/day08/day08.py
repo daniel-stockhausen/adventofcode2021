@@ -42,7 +42,7 @@ segments_by_digit: dict[int, str] = {
 digit_by_segments: dict[str, int] = {value: key for key, value in segments_by_digit.items()}
 
 
-class Digit():
+class Digit:
     def __init__(self, pattern: str) -> None:
         self.pattern = pattern
 
