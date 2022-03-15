@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from aoc.day05.day05 import get_input_data, get_example_data, count_overlapping_coords
+from aoc.day05.day05 import count_overlapping_coords, get_example_data, get_input_data
 
 
 class TestDay05(unittest.TestCase):

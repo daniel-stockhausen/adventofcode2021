@@ -1,8 +1,8 @@
 import os
 import unittest
 
-from aoc.day08.day08 import Digit, count_instantly_recognizable_output_digits, decode_line, get_input_data, \
-    get_example_data, sum_up_output_values
+from aoc.day08.day08 import Digit, count_instantly_recognizable_output_digits, decode_line, get_example_data, \
+    get_input_data, sum_up_output_values
 
 
 class TestDay08(unittest.TestCase):

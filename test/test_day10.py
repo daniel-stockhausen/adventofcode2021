@@ -1,8 +1,8 @@
 import os
 import unittest
 
-from aoc.day10.day10 import calc_completion_string_middle_score, score_line_error, calc_file_error_score, \
-    calc_missing_tokens_for_incomplete_line, get_input_data, get_example_data, score_line_completion
+from aoc.day10.day10 import calc_completion_string_middle_score, calc_file_error_score, \
+    calc_missing_tokens_for_incomplete_line, get_example_data, get_input_data, score_line_completion, score_line_error
 
 
 class TestDay10(unittest.TestCase):

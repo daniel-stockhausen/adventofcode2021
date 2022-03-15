@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from aoc.day01.day01 import count_increasing_pairs, count_increasing_triples, get_input_data, get_example_data
+from aoc.day01.day01 import count_increasing_pairs, count_increasing_triples, get_example_data, get_input_data
 
 
 class TestDay01(unittest.TestCase):

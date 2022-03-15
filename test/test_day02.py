@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from aoc.day02.day02 import get_input_data, get_example_data, calculate_destination, calculate_destination_part2
+from aoc.day02.day02 import calculate_destination, calculate_destination_part2, get_example_data, get_input_data
 
 
 class TestDay02(unittest.TestCase):

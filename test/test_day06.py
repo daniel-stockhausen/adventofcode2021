@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from aoc.day06.day06 import get_input_data, get_example_data, elapse_days
+from aoc.day06.day06 import elapse_days, get_example_data, get_input_data
 
 
 class TestDay06(unittest.TestCase):

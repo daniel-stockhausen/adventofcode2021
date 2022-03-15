@@ -1,8 +1,8 @@
 import os
 import unittest
 
-from aoc.day11.day11 import OctopusLevels, process_step_count_flashes, get_example_data, count_flashes_for_steps, \
-    get_input_data, calc_synchronized_step
+from aoc.day11.day11 import OctopusLevels, calc_synchronized_step, count_flashes_for_steps, get_example_data, \
+    get_input_data, process_step_count_flashes
 
 
 class TestDay11(unittest.TestCase):

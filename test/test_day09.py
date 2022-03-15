@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from aoc.day09.day09 import aggregate_basin_coords, get_input_data, get_example_data, is_low_point, \
+from aoc.day09.day09 import aggregate_basin_coords, get_example_data, get_input_data, is_low_point, \
     multiply_three_largest_basins_size, sum_risk_levels_of_low_points
 
 

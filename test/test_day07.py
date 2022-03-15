@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from aoc.day07.day07 import get_input_data, get_example_data, calc_fuel, calc_fuel_for_cheapest_target, gauss_sum
+from aoc.day07.day07 import calc_fuel, calc_fuel_for_cheapest_target, gauss_sum, get_example_data, get_input_data
 
 
 class TestDay07(unittest.TestCase):

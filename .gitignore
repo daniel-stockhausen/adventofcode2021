@@ -5,3 +5,4 @@ __pycache__
 .pyre_configuration
 .vscode
 *.pyc
+input/tmp.txt

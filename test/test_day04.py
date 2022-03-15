@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from aoc.day04.day04 import get_input_data, get_example_data, calc_score_of_winning_board
+from aoc.day04.day04 import calc_score_of_winning_board, get_example_data, get_input_data
 
 
 class TestDay04(unittest.TestCase):
