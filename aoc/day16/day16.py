@@ -44,21 +44,8 @@ class Packet:
         else:
             return False
 
-    def __repr__(self) -> str:
-        return f"Packet({self.version}, {self.type}, {self.value})"
-
     def __int__(self) -> int:
         return self.eval()
-
-    def __add__(self, other: Any) -> Any:
-        return self.value + other
-
-    __radd__ = __add__
-
-    def __mul__(self, other: Any) -> Any:
-        return self.value * other
-
-    __rmul__ = __mul__
 
     def __lt__(self, other: Any) -> bool:
         return self.value < other
@@ -85,7 +72,7 @@ class Packet:
             case 7:
                 return int(self.value[0]) == int(self.value[1])
             case _:
-                raise ValueError("Invalid type id or not compatible with packet value!")
+                raise ValueError("Invalid type id!")
 
 
 def hex_to_bin(hex: str) -> str:
