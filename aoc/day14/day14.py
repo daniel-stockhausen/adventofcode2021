@@ -78,7 +78,7 @@ def subtract_least_common_from_most_common_count_efficiently(polymer: str, rules
     count_by_neighbors: IntByStr = defaultdict(int)
     count_by_char: IntByStr = defaultdict(int)
     for i, char in enumerate(polymer[:-1]):
-        count_by_neighbors[polymer[i : i + 2]] += 1
+        count_by_neighbors[polymer[i: i + 2]] += 1
         count_by_char[char] += 1
     count_by_char[polymer[-1]] += 1
 
